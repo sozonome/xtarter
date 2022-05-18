@@ -8,7 +8,7 @@ const Header = () => {
       as="header"
       width="full"
       align="center"
-      position="sticky"
+      position="fixed"
       top="0"
       padding={8}
     >
