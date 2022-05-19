@@ -11,7 +11,7 @@ const defaultSEOConfig = {
     description: "starter templates",
     images: [
       {
-        url: "https://og-image.sznm.dev/**xtarter**.sznm.dev.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fsznm.dev%2Favataaars.svg&widths=250",
+        url: "https://og.sznm.dev/api/generate?heading=xtarter&text=https://xtarter.sznm.dev%20|%20Starter%20Templates",
         alt: "xtarter.sznm.dev og-image",
       },
     ],

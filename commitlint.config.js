@@ -11,6 +11,7 @@ const CommitLintConfiguration = {
         "components",
         "layout",
         "pages",
+        "seo",
         "styles",
         "utils",
         "types",
