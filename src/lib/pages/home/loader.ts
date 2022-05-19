@@ -6,9 +6,11 @@ import { fetcher } from "lib/utils/fetcher";
 
 import type { HomePageProps } from "./types";
 
+export const username = "sozonome";
+
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   const data = await fetcher<Array<Repo>>({
-    url: "https://api.github.com/users/sozonome/repos",
+    url: `https://api.github.com/users/${username}/repos`,
     params: {
       type: "owner",
       per_page: 200,
@@ -18,9 +20,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
   const repos = sortBy(
     data.filter((repo) => repo.is_template),
     ["stargazers_count"]
-  )
-    .reverse()
-    .slice(0, 9);
+  ).reverse();
 
   return {
     props: {

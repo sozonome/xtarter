@@ -9,7 +9,7 @@ const Footer = () => {
       paddingY={8}
       marginX="auto"
     >
-      <Text>
+      <Text fontSize="sm">
         {new Date().getFullYear()} -{" "}
         <Link href="https://sznm.dev" isExternal rel="noopener noreferrer">
           sznm.dev
