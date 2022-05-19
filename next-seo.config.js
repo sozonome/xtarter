@@ -3,7 +3,7 @@ const defaultSEOConfig = {
   title: "starter templates",
   titleTemplate: "%s | xtarter",
   defaultTitle: "xtarter",
-  description: "Next.js + chakra-ui + TypeScript template",
+  description: "Starter templates to quickly launch your projects",
   canonical: "https://xtarter.sznm.dev",
   openGraph: {
     url: "https://xtarter.sznm.dev",
