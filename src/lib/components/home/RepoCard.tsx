@@ -95,6 +95,7 @@ const RepoCard = ({
               whiteSpace="nowrap"
               overflow="hidden"
               colorScheme="orange"
+              key={topic}
             >
               {topic}
             </Tag>

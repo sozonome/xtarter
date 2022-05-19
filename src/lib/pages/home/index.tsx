@@ -63,7 +63,7 @@ const HomePage = ({ data }: HomePageProps) => {
         gap={{ base: 6, md: 8, lg: 12 }}
       >
         {filteredData.map((project) => (
-          <ProjectCard data={project} />
+          <ProjectCard data={project} key={project.name} />
         ))}
       </Grid>
 
