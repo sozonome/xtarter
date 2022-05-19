@@ -3,6 +3,7 @@ import { ColorModeScript } from "@chakra-ui/react";
 import type { DocumentContext } from "next/document";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
+import { UMAMI_DOMAINS, UMAMI_SRC, UMAMI_WEBSITE_ID } from "lib/constants/env";
 import customTheme from "lib/styles/customTheme";
 
 const APP_NAME = "nextarter-chakra";
@@ -40,6 +41,15 @@ class MyDocument extends Document {
           />
           <link rel="icon" href="/app-icon.png" /> */}
           <link rel="manifest" href="/manifest.json" />
+
+          {/* umami self-hosted analytics */}
+          <script
+            async
+            defer
+            data-website-id={UMAMI_WEBSITE_ID}
+            src={UMAMI_SRC}
+            data-domains={UMAMI_DOMAINS}
+          />
         </Head>
         <body>
           <ColorModeScript

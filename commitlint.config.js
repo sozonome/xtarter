@@ -6,7 +6,15 @@ const CommitLintConfiguration = {
     "scope-enum": [
       2,
       "always",
-      ["components", "layout", "pages", "styles", "utils", "types"],
+      [
+        "analytics",
+        "components",
+        "layout",
+        "pages",
+        "styles",
+        "utils",
+        "types",
+      ],
     ],
     "scope-case": [2, "always", "kebab-case"],
   },
