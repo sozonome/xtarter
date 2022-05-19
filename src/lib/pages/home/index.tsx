@@ -3,6 +3,7 @@ import * as React from "react";
 
 import ProjectCard from "lib/components/home/RepoCard";
 import Title from "lib/components/home/Title";
+import { trackEvent } from "lib/utils/trackEvent";
 
 import type { HomePageProps } from "./types";
 
@@ -15,7 +16,20 @@ const HomePage = ({ data }: HomePageProps) => {
     return data.slice(0, 6);
   }, [data, showAll]);
 
-  const handleLoadMore = () => setShowAll(!showAll);
+  const handleLoadMore = () => {
+    trackEvent({
+      eventValue: showAll ? "Click Hide" : "Click Load More",
+      eventType: "CTA",
+    });
+    setShowAll(!showAll);
+  };
+
+  const handleClickDocumentation = () => {
+    trackEvent({
+      eventValue: "Open Documentation",
+      eventType: "link",
+    });
+  };
 
   return (
     <Flex
@@ -34,6 +48,7 @@ const HomePage = ({ data }: HomePageProps) => {
           colorScheme="orange"
           href="https://docs.sznm.dev/v/starter-templates"
           isExternal
+          onClick={handleClickDocumentation}
         >
           Documentation [WIP]
         </Button>

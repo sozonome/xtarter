@@ -13,6 +13,7 @@ import { FaStar } from "react-icons/fa";
 
 import type { Repo } from "lib/types/repo";
 import { filterTopics } from "lib/utils/filterTopics";
+import { trackEvent } from "lib/utils/trackEvent";
 
 type RepoCardProps = {
   data: Repo;
@@ -32,6 +33,13 @@ const RepoCard = ({
   );
   const borderColor = useColorModeValue("orange.300", "orange.800");
 
+  const handleClick = () => {
+    trackEvent({
+      eventValue: `Click ${name}`,
+      eventType: "link",
+    });
+  };
+
   return (
     <LinkBox
       display="flex"
@@ -48,6 +56,7 @@ const RepoCard = ({
         borderRadius: 24,
         bgGradient: hoverGradient,
       }}
+      onClick={handleClick}
       role="group"
     >
       <Heading fontSize="xl" minHeight={12}>
