@@ -11,6 +11,7 @@ const Header = () => {
       position="fixed"
       top="0"
       padding={8}
+      zIndex={5}
     >
       <Box marginLeft="auto">
         <ThemeToggle />
