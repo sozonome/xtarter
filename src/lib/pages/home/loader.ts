@@ -26,6 +26,6 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     props: {
       data: repos,
     },
-    revalidate: 120,
+    revalidate: 86400,
   };
 };
