@@ -67,9 +67,11 @@ const HomePage = ({ data }: HomePageProps) => {
         ))}
       </Grid>
 
-      <Button colorScheme="gray" size="sm" onClick={handleLoadMore}>
-        {showAll ? "Hide" : "Show All"}
-      </Button>
+      {data.length > 6 && (
+        <Button colorScheme="gray" size="sm" onClick={handleLoadMore}>
+          {showAll ? "Hide" : "Show All"}
+        </Button>
+      )}
     </Flex>
   );
 };

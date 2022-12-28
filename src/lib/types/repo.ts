@@ -5,4 +5,5 @@ export type Repo = {
   stargazers_count: number;
   topics: Array<string>;
   is_template: boolean;
+  archived: boolean;
 };

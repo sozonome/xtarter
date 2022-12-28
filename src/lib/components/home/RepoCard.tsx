@@ -20,7 +20,7 @@ type RepoCardProps = {
 };
 
 const RepoCard = ({
-  data: { name, description, homepage, stargazers_count, topics },
+  data: { name, description, homepage, stargazers_count, topics, archived },
 }: RepoCardProps) => {
   const hoverGradient = useColorModeValue(
     "linear(to-br, orange.50, pink.100)",
@@ -75,6 +75,7 @@ const RepoCard = ({
           {name}
         </LinkOverlay>
       </Heading>
+
       <Text
         fontSize="sm"
         color="gray"
@@ -102,9 +103,17 @@ const RepoCard = ({
           ))}
       </Flex>
 
-      <HStack fontSize="sm">
-        <Icon as={FaStar} _groupHover={{ color: "orange" }} />
-        <Text>{stargazers_count}</Text>
+      <HStack fontSize="sm" spacing={4}>
+        <Flex alignItems="center" gap={2}>
+          <Icon as={FaStar} _groupHover={{ color: "orange" }} />
+          <Text>{stargazers_count}</Text>
+        </Flex>
+
+        {archived && (
+          <Tag size="sm" colorScheme="red" marginLeft={2}>
+            archived
+          </Tag>
+        )}
       </HStack>
     </LinkBox>
   );
