@@ -1,5 +1,7 @@
 # xtarter
 
+templates list
+
 ## Getting Started
 
 To run the development server:
