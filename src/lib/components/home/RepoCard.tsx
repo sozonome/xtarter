@@ -8,12 +8,12 @@ import {
   Tag,
   Text,
   useColorModeValue,
-} from "@chakra-ui/react";
-import { FaStar } from "react-icons/fa";
+} from '@chakra-ui/react';
+import { FaStar } from 'react-icons/fa';
 
-import type { Repo } from "lib/types/repo";
-import { filterTopics } from "lib/utils/filterTopics";
-import { trackEvent } from "lib/utils/trackEvent";
+import type { Repo } from 'lib/types/repo';
+import { filterTopics } from 'lib/utils/filterTopics';
+import { trackEvent } from 'lib/utils/trackEvent';
 
 type RepoCardProps = {
   data: Repo;
@@ -23,20 +23,20 @@ const RepoCard = ({
   data: { name, description, homepage, stargazers_count, topics, archived },
 }: RepoCardProps) => {
   const hoverGradient = useColorModeValue(
-    "linear(to-br, orange.50, pink.100)",
-    "linear(to-br, orange.600, pink.800)"
+    'linear(to-br, orange.50, pink.100)',
+    'linear(to-br, orange.600, pink.800)'
   );
-  const descriptionColor = useColorModeValue("gray.700", "gray.200");
+  const descriptionColor = useColorModeValue('gray.700', 'gray.200');
   const titleLineBg = useColorModeValue(
-    "linear-gradient(#fff, #fff),linear-gradient(90deg,#e4a666,#e4a666)",
-    "linear-gradient(#1A202C, #1A202C),linear-gradient(90deg,#eedd88,#e4a666)"
+    'linear-gradient(#fff, #fff),linear-gradient(90deg,#e4a666,#e4a666)',
+    'linear-gradient(#1A202C, #1A202C),linear-gradient(90deg,#eedd88,#e4a666)'
   );
-  const borderColor = useColorModeValue("orange.300", "orange.800");
+  const borderColor = useColorModeValue('orange.300', 'orange.800');
 
   const handleClick = () => {
     trackEvent({
       eventName: `Click ${name}`,
-      eventData: { type: "link" },
+      eventData: { type: 'link' },
     });
   };
 
@@ -52,7 +52,7 @@ const RepoCard = ({
       padding={4}
       transition="0.2s ease-out"
       _hover={{
-        borderColor: "orange.400",
+        borderColor: 'orange.400',
         borderRadius: 24,
         bgGradient: hoverGradient,
       }}
@@ -69,7 +69,7 @@ const RepoCard = ({
           backgroundPosition="100% 100%, 0 100%"
           backgroundRepeat="no-repeat"
           _groupHover={{
-            backgroundSize: "0 2px, 100% 2px",
+            backgroundSize: '0 2px, 100% 2px',
           }}
         >
           {name}
@@ -105,7 +105,7 @@ const RepoCard = ({
 
       <HStack fontSize="sm" spacing={4}>
         <Flex alignItems="center" gap={2}>
-          <Icon as={FaStar} _groupHover={{ color: "orange" }} />
+          <Icon as={FaStar} _groupHover={{ color: 'orange' }} />
           <Text>{stargazers_count}</Text>
         </Flex>
 

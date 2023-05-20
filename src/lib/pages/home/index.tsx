@@ -1,11 +1,11 @@
-import { Button, Flex, Link, Grid } from "@chakra-ui/react";
-import * as React from "react";
+import { Button, Flex, Link, Grid } from '@chakra-ui/react';
+import * as React from 'react';
 
-import ProjectCard from "lib/components/home/RepoCard";
-import Title from "lib/components/home/Title";
-import { trackEvent } from "lib/utils/trackEvent";
+import ProjectCard from 'lib/components/home/RepoCard';
+import Title from 'lib/components/home/Title';
+import { trackEvent } from 'lib/utils/trackEvent';
 
-import type { HomePageProps } from "./types";
+import type { HomePageProps } from './types';
 
 const HomePage = ({ data }: HomePageProps) => {
   const [showAll, setShowAll] = React.useState<boolean>(false);
@@ -18,16 +18,16 @@ const HomePage = ({ data }: HomePageProps) => {
 
   const handleLoadMore = () => {
     trackEvent({
-      eventName: showAll ? "Click Hide" : "Click Load More",
-      eventData: { type: "CTA" },
+      eventName: showAll ? 'Click Hide' : 'Click Load More',
+      eventData: { type: 'CTA' },
     });
     setShowAll(!showAll);
   };
 
   const handleClickDocumentation = () => {
     trackEvent({
-      eventName: "Open Documentation",
-      eventData: { type: "link" },
+      eventName: 'Open Documentation',
+      eventData: { type: 'link' },
     });
   };
 
@@ -56,9 +56,9 @@ const HomePage = ({ data }: HomePageProps) => {
 
       <Grid
         templateColumns={{
-          base: "1fr",
-          md: "repeat(2, 1fr)",
-          xl: "repeat(3, 1fr)",
+          base: '1fr',
+          md: 'repeat(2, 1fr)',
+          xl: 'repeat(3, 1fr)',
         }}
         gap={{ base: 6, md: 8, lg: 12 }}
       >
@@ -69,7 +69,7 @@ const HomePage = ({ data }: HomePageProps) => {
 
       {data.length > 6 && (
         <Button colorScheme="gray" size="sm" onClick={handleLoadMore}>
-          {showAll ? "Hide" : "Show All"}
+          {showAll ? 'Hide' : 'Show All'}
         </Button>
       )}
     </Flex>
