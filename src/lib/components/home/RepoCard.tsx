@@ -35,8 +35,8 @@ const RepoCard = ({
 
   const handleClick = () => {
     trackEvent({
-      eventValue: `Click ${name}`,
-      eventType: "link",
+      eventName: `Click ${name}`,
+      eventData: { type: "link" },
     });
   };
 

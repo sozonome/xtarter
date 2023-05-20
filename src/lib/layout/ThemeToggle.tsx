@@ -8,8 +8,8 @@ const ThemeToggle = () => {
 
   const handleClickThemeToggle = () => {
     trackEvent({
-      eventValue: `Toggle to ${colorMode === "light" ? "dark" : "light"}`,
-      eventType: "theme",
+      eventName: `Toggle to ${colorMode === "light" ? "dark" : "light"}`,
+      eventData: { type: "theme" },
     });
     toggleColorMode();
   };

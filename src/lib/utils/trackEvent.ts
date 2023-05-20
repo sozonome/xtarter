@@ -1,8 +1,6 @@
 type TrackEventArgs = {
-  eventValue: string;
-  eventType: string;
-  url?: string;
-  websiteId?: string;
+  eventName: string;
+  eventData: Record<string, string | number>;
 };
 
 /**
@@ -13,13 +11,8 @@ type TrackEventArgs = {
  * https://umami.is/docs/track-events
  * https://umami.is/docs/tracker-functions
  */
-export const trackEvent = ({
-  eventValue,
-  eventType,
-  url,
-  websiteId,
-}: TrackEventArgs) => {
-  if (window.umami && typeof window.umami.trackEvent === "function") {
-    window.umami.trackEvent(eventValue, eventType, url, websiteId);
+export const trackEvent = ({ eventName, eventData }: TrackEventArgs) => {
+  if (window.umami && typeof window.umami.track === "function") {
+    window.umami.track(eventName, eventData);
   }
 };

@@ -18,16 +18,16 @@ const HomePage = ({ data }: HomePageProps) => {
 
   const handleLoadMore = () => {
     trackEvent({
-      eventValue: showAll ? "Click Hide" : "Click Load More",
-      eventType: "CTA",
+      eventName: showAll ? "Click Hide" : "Click Load More",
+      eventData: { type: "CTA" },
     });
     setShowAll(!showAll);
   };
 
   const handleClickDocumentation = () => {
     trackEvent({
-      eventValue: "Open Documentation",
-      eventType: "link",
+      eventName: "Open Documentation",
+      eventData: { type: "link" },
     });
   };
 
